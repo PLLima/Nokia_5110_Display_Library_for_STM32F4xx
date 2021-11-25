@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+- ## For a more detailed documentation, here's a [Nokia 5110's Static Library Documentation PDF](https://drive.google.com/file/d/1tTYV-_VoK2PKpsm6HHo3GUi-4JNY2zMa/view?usp=sharing).
+- ## For the example images's files, here's [its folder](https://drive.google.com/drive/folders/1O_cOrA-rPLWu5BWAe0FCR24_E1Jp_-6t?usp=sharing).
+- ## For the example's video, here's [its file](https://drive.google.com/file/d/1msOdQODUZeiV7kxU_a3M3AzKrjA-5qgk/view?usp=sharing).
 
 ### Markdown
 
