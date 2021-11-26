@@ -30,11 +30,11 @@ November, 2021
 
 - [Overview](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#overview);
 - [Installation](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#installation);
-- [Display's Characteristics](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#display's_characteristics);
-- [Library's Features](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#library's_features);
+- [Display's Characteristics](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#displays-characteristics);
+- [Library's Features](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#librarys-features);
 - [Fonts](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#fonts);
-- [Initial Recommendation for Starting an Application with this Library](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#initial_recommendation_for_starting_an_application_with_this_library);
 - [Images](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#images);
+- [Initial Recommendation for Starting an Application with this Library](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#initial-recommendation-for-starting-an-application-with-this-library);
 - [Examples](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#examples).
 
 ## Overview:
@@ -105,7 +105,7 @@ In order to create a custom font (s)' file, the user must first create a _.h_ fi
 
 One can print any image to the display, as long as they are inside a single dimensional array of _uint8_t_ variables (single dimensional unsigned char arrays are equivalent). The display is capable of storing up to 504 bytes of data, it's recommended that the array has at maximum 504 elements. The user can create images and include them in the main program through _.h_ files or by implementing them in the final program. The _lcd5110_included_images.h_ has some good examples of how to create arrays of images to send to the LCD 5110. Once created, it's possible to print them to the display through the `LCD5110_Write_DataBlock` function.
 
-## Initial recommendation for starting an application with this library:
+## Initial Recommendation for Starting an Application with this Library:
 
 1. Configure your SPI peripheral (s) to support the display's requirements and limitations (remember to use a software controlled SPI_NSS) and, it's recommended to use a timer to make the best use of the non-blocking functions;
 2. Create a `LCD5110_HandleTypeDef` variable for each of the connected displays (it's not recommended to initialize them);
