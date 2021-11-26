@@ -10,9 +10,7 @@
 
 ## Author:
 
-```
-Pedro Lubaszewski Lima
-```
+@PLLima
 
 ## Version:
 
