@@ -6,7 +6,7 @@
 
 # Nokia 5110's Static Library:
 
-Static library for the Nokia 5110 (with a PCD8544 controller) for the STM32F4xx boards (using HAL drivers).
+**Static library for the Nokia 5110 (with a PCD8544 controller) for the STM32F4xx boards (using HAL drivers).**
 
 ## Author:
 
@@ -28,14 +28,14 @@ November, 2021
 
 ## Table of Contents:
 
-- [Overview]();
-- [Installation]();
-- [Display's Characteristics]();
-- [Library's Features]();
-- [Fonts]();
-- [Initial recommendation for starting an application with this library]();
-- [Images]();
-- [Examples]().
+- [Overview](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#overview);
+- [Installation](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#installation);
+- [Display's Characteristics](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#display's_characteristics);
+- [Library's Features](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#library's_features);
+- [Fonts](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#fonts);
+- [Initial Recommendation for Starting an Application with this Library](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#initial_recommendation_for_starting_an_application_with_this_library);
+- [Images](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#images);
+- [Examples](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#examples).
 
 ## Overview:
 
@@ -71,7 +71,7 @@ Using the SPI protocol, the device's driver receives data from the SDIN (data in
 
 ### Attention:
 
-- The display works with a voltage range from 2.7 to 5 V, however it's recommended to power it within 2.7 to 3.3 V;
+- The display works with a voltage range from 2.7 to 5 V, however it's recommended to power it within 2.7 to   3.3 V;
 - This device works within a temperature range from – 25 °C to 70 °C, but it's always recommended to keep its temperature around 25 °C.
 
 ## Library's Features:
@@ -81,13 +81,13 @@ The Nokia 5110's Static Library for the STM32F4xx MCUs using HAL drivers attends
 The user needs to define which transmission mode to use with the initialization function and can change it at anytime during the code's execution with the function that changes that mode (`LCD5110_Set_Mode`).
 
 This library also counts with a text writing functions, `LCD5110_Write_String` that writes any string that fits the screen's size onto the display. If the string passed by the user as a parameter is larger than the screen's size (504 bytes / columns), it returns an error an writes it on the screen. There's the possibility to change the text's font. In
-order to do that, one needs to include the _lcd5110_included_fonts.h_ file in the project or create and include one's own fonts' file, following the patterns specified by the [Fonts]() topic in this section.
+order to do that, one needs to include the _lcd5110_included_fonts.h_ file in the project or create and include one's own fonts' file, following the patterns specified by the [Fonts](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#fonts) topic in this section.
 
 The drawing functions included in this library allow the user to draw a line from a subcoordinate (pixel) to another subcoordinate (the x value of the first subcoordinate must be smaller than the second's x value). In addition to that, it gives the ability to draw retactangles and rounded rectangles from a vertex to another (diagonally, respecting the x and y values of the first subcoordinate being smaller than the second's x and y values). Last but not least, the user can draw a circle to the screen by specifing its center's subcoordinate and radius. Since all the drawing functions use a shared buffer, every time one draws a figure without clearing the screen (`LCD5110_Clear`), the previously drawn figures after the last calling of the clearing function will remain drawn. In other words, if the user calls the `LCD5110_Draw_Rect` to draw two different rectangles, for example, they will both appear in the screen at once.
 
 All the drawing and text writing functions have an inverse mode version that draw and write text inversely onto the display (everything that is usually "black" turns "white" and vice-versa). The inverse text writing functions don't require the use of the clearing functions, since they turn every pixel surrounding each character on ("black") in a rectangular manner. For example, if a font has a width of 6 bytes / columns, the surrounding pixels of the character in a 6 x 8 (width x height, in pixels) area will be turned on. In order to use the inverse drawing functions, the user must call the inverse clearing function first (`LCD5110_InvClear`) and then call the respective drawing function (s). Of course, if the invert screen mode was called for an odd number of times in the code, everything that was drawn or written with the inverse functions will display as if they were drawn or written with the normal functions.
 
-If the aforementioned drawing functionality isn't enough, there is also a block / image writing function that sends a user-defined number of bytes from a chosen array of bytes. What array is going to be sent can be included in the project by the user. For more information about its format, read the [Images]() section below.
+If the aforementioned drawing functionality isn't enough, there is also a block / image writing function that sends a user-defined number of bytes from a chosen array of bytes. What array is going to be sent can be included in the project by the user. For more information about its format, read the [Images](https://github.com/PLLima/Nokia_5110_Display_Library_for_STM32F4xx#images) section below.
 
 All functions have parameter errors detection that stop the execution of the rest of this library's functions and prints a message indicating which parameters of the respective function that caused an error. The parameters' boundaries were set in order to avoid unexpected behaviour of the display using this library. If one wants to get the code for the respective error, there is an user-available `LCD5110_Get_Error()` function.
 
